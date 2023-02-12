@@ -1,4 +1,9 @@
 # KeyManager
+[![Android CI](https://github.com/Yash-Garg/KeyManager/actions/workflows/pr_ci.yml/badge.svg)](https://github.com/Yash-Garg/KeyManager/actions/workflows/pr_ci.yml)
+
+An application to manage your SSH and GPG keys on [GitHub](https://github.com/settings/keys) written in Kotlin & Jetpack Compose.
+
+## Download
 
 <a href="https://play.google.com/store/apps/details?id=dev.yash.keymanager">
   <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
@@ -11,29 +16,14 @@
        height="80" />
 </a>
 
-An application to manage SSH and GPG keys on [GitHub](https://github.com/settings/keys) written in Kotlin.
-
-Thanks to [FreePik](https://www.flaticon.com/free-icon/password_4370811) for the app icon.
-
 ## Screenshots
 
 ![Feature Graphic](images/feature-graphic.png)
 
 ## Building
 
-You will need to create a `Secrets.kt` file in `utils/`. This file will contain your GitHub OAuth app credentials. The format for this file is as given below:
-
-```kotlin
-object Secrets {
-    const val CLIENT_SECRET = "your_client_secret"
-    const val CLIENT_ID = "your_client_id"
-    // DO NOT CHANGE [OAUTH_SCOPES] or [REDIRECT_URI]
-    const val OAUTH_SCOPES = "admin:public_key admin:gpg_key read:public_key write:public_key"
-    const val REDIRECT_URI = "dev.yash.keymanager://oauth2/callback"
-}
-```
-
-> The OAuth Callback URL should be same as the `REDIRECT_URI` mentioned above.
+You will need to add your credentials in the [`Secrets.kt`](https://github.com/Yash-Garg/KeyManager/blob/develop/app/src/main/kotlin/dev/yash/keymanager/data/utils/Secrets.kt) file. 
+This file will contain your GitHub OAuth app credentials.
 
 ## Third Party Libraries
 
@@ -41,12 +31,11 @@ object Secrets {
 - [ChuckerTeam/chucker](https://github.com/ChuckerTeam/chucker)
 - [dagger/hilt](https://dagger.dev/hilt/)
 - [square/leakcanary](https://github.com/square/leakcanary/)
-- [airbnb/lottie-android](https://github.com/airbnb/lottie-android)
 - [square/moshi](https://github.com/square/moshi)
 - [MoshiX/moshi-metadata-reflect](https://github.com/ZacSweers/MoshiX/tree/main/moshi-metadata-reflect)
+- [michaelbull/kotlin-result](https://github.com/michaelbull/kotlin-result)
 - [square/okhttp](https://github.com/square/okhttp)
 - [square/retrofit](https://github.com/square/retrofit)
-- [JakeWharton/timber](https://github.com/JakeWharton/timber)
 
 ## License
 
